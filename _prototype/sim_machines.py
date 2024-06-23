@@ -109,7 +109,7 @@ class Simple(object):
                       imm_h         if cs[CS_OP2_SEL] == OP2_IH     else \
                       WORD(
                         SWORD(-1)   # simple fix for out of range error
-                      )      if cs[CS_OP2_SEL] == OP2_N1     else \
+                      )             if cs[CS_OP2_SEL] == OP2_N1     else \
                       WORD(1)       if cs[CS_OP2_SEL] == OP2_P1     else \
                       WORD(0)       if cs[CS_OP2_SEL] == OP2_0      else \
                       WORD(0)
