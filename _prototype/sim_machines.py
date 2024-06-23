@@ -197,6 +197,9 @@ class Simple(object):
         wb_data         = pc_plus1      if cs[CS_WB_SEL] == WB_PC1      else \
                           WORD(0)
 
+        if cs[CS_IO_SEL] == IO_W:
+            print("[I/O] 0x%04x" % rs1_data)
+
         if cs[CS_RF_WEN]:
             Simple.cpu.rf.write(rdest, wb_data)
         Simple.cpu.pc.write(pc_next)
